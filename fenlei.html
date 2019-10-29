@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head> 
+        <meta charset="UTF-8">  
+        <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">  
+            <script>   
+            (function (doc, win) {
+                    var docEl = doc.documentElement,
+                        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                        recalc = function () {
+                            var clientWidth = docEl.clientWidth;
+                            if (!clientWidth) return;
+                            if(clientWidth>=750){
+                                docEl.style.fontSize = '100px';
+                            }else{
+                                docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+                            }
+                        };
+             
+                    if (!doc.addEventListener) return;
+                    win.addEventListener(resizeEvt, recalc, false);
+                    doc.addEventListener('DOMContentLoaded', recalc, false);
+                })(document, window);
+            </script> 
+        <title>标题</title> 
+        <link rel="stylesheet" href="common.css">
+        <style type="text/css">
+            body{
+                position: relative;
+                width: 100%;
+                max-width: 750px;
+                min-width: 320px;
+                margin: 0 auto;
+            }
+            .head>a{
+                width: 1.2rem;
+                text-align: center;
+                font-size: 0.14rem;
+                border: 0.01rem solid #ffa05a;
+                border-radius: 0.18rem; 
+                vertical-align:middle;
+                padding: 0.16rem 0;
+                display: block;
+                color: black;
+                margin-left: 0.23rem;
+                margin-top: 0.48rem;
+                float: left;
+            }
+            .head>h6{
+                float: left;
+                font-size: 0.26rem;
+                margin-left: 2.2rem;
+                margin-top: 0.66rem;
+                font-weight: 300;
+            }
+            img{
+                width: auto;
+            }
+            .email{
+                width: 0.61rem;
+                height: 0.41rem;
+                position: relative;
+                float: right;
+                margin-right: 0.2rem;
+                margin-top:0.6rem;
+            }
+            .email img{
+                width: 100%;
+                float: left;
+            }
+            .email span{
+                width: 0.28rem;
+                height: 0.28rem;
+                background: red;
+                border-radius: 50%;
+                color: white;
+                position: absolute;
+                right: 0;
+                top: -0.15rem;
+                font-size: 0.15rem;
+                text-align: center;
+                display: block;
+                line-height: 0.28rem;
+            }
+            .swiper{
+                width: 100%;
+                height:1.5rem;
+            }
+            .swiper>.swiper_img li{
+                float: left;
+                width: 25%;
+                display: inline-block;
+                text-align: center;
+            }
+            .swiper>.swiper_img li a p{
+                font-size: 0.24rem;
+                margin-top:-0.24rem;
+            }
+            .swiper>.swiper_img li a{
+                color: black;
+            }
+            .swiper>.swiper_img li img{
+                width: 1.51rem;
+                height:1.48rem;
+                border-radius: 50%;
+            }
+            .swiper{
+                position: relative;
+                margin-bottom: 0.2rem;
+            }
+            .swiper .swiper_nth{
+                position: absolute;
+                top: 2rem;
+                left: 3.25rem;
+            }
+            .swiper .swiper_nth li{
+                float: left;
+                width: 0.18rem;
+                height: 0.18rem;
+                border-radius:50%;
+                display: inline-block;
+                background: #ffc9a1;
+                margin-right: 0.08rem;
+            }
+            .swiper .swiper_nth li:nth-child(1){
+                background: #ffa05a;
+                }
+
+            .list>p{
+                font-size: 0.3rem;
+                padding-left: 0.3rem;
+                height: 0.5rem;
+                line-height: 0.45rem;
+            }
+            .list>p .head1{
+                background: url('./images/round1_lo.png') no-repeat ;
+                background-size: 0.56rem 0.48rem;
+            padding-left:0.66rem;
+            margin-right: 4.50rem;
+            }
+            .list>p .head3{
+                background: url('./images/round3_lo.png') no-repeat ;
+                background-size: 0.56rem 0.48rem;
+            padding-left:0.66rem;
+            margin-right: 4.50rem;
+            }
+            .list>p .head4{
+                background: url('./images/round4_lo.png') no-repeat ;
+                background-size: 0.56rem 0.48rem;
+            padding-left:0.66rem;
+            margin-right: 4.50rem;
+            }
+            .list>p .foot{
+                font-size: 0.22rem;
+                background: url('./images/more.jpg') no-repeat 0.47rem;
+                background-size: 0.27rem 0.25rem;
+            padding-right:0.37rem;
+            }
+            .list .list_img{
+                width: 100%;
+            }
+            .list .list_img ul{
+                width: 100%;
+            }
+            .list .list_img ul li{
+                width: 25%;
+                float: left;
+                display: inline-block;
+                margin:0.37rem 0 0.52rem;
+            }
+            .list .list_img ul li img{
+                width: 1.32rem;
+                height: 1.33rem;
+                margin:0 auto;
+                display: block;
+            }
+
+            .nav{
+                width: 7.5rem;
+                position: fixed;
+                bottom: 0;
+                background: white;
+            }
+            .nav a{width: 25%;
+                height: 1.25rem;
+                font-size: 0.26rem;
+                color: black;
+                float: left;
+                display: block;
+                text-align: center;
+                padding-top: 0.1rem;
+            }
+            .nav a img{
+                margin:0 auto;
+                width: 0.74rem;
+                height: 0.7rem;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="head">
+            <a href="">Back</a>
+            <h6>分类</h6>
+            <div class="email">
+                <img src="./images/我的_03.jpg" alt=""><span>2</span>
+            </div>
+        </div>
+        <div class="clear" style="margin-bottom: 0.2rem;"></div>
+
+        <div class="swiper">
+            <ul class="swiper_img">
+                <li><a href=""><img src="./images/round1.png" alt=""> <p>首页</p> </a></li>
+                <li><a href=""><img src="./images/round2.png" alt=""> <p>首页</p></a></li>
+                <li><a href=""><img src="./images/round3.png" alt=""> <p>首页</p></a>    </li>
+                <li><a href=""><img src="./images/round4.png" alt=""> <p>首页</p></a></li>
+            </ul>
+            <ul class="swiper_nth">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="clear" style="margin-bottom: 0.52rem;"></div>
+
+        <div class="list">
+            <p><span class="head1">美食类</span><span class="foot">更多</span> </p>
+            <div  class="list_img">
+                <ul  >
+                    <li><a href=""><img src="./images/round1_1.png" alt=""></a></li>
+                    <li><a href=""><img src="./images/round1_2.png" alt=""></a></li>
+                    <li><a href=""><img src="./images/round1_3.png" alt=""></a></li>
+                    <li><a href=""><img src="./images/round1_4.png" alt=""></a></li>
+                </ul>
+
+            </div>
+        </div>
+        <div class="clear"></div>
+        <div class="list">
+            <p><span class="head3">运动类</span><span class="foot">更多</span> </p>
+            <div  class="list_img">
+                <ul  >
+                    <li><a href=""><img src="./images/round3_1.png" alt=""></a></li>
+                    <li><a href=""><img src="./images/round3_2.png" alt=""></a></li>
+                    <li><a href=""><img src="./images/round3_3.png" alt=""></a></li>
+                    <li><a href=""><img src="./images/round3_4.png" alt=""></a></li>
+                </ul>
+
+            </div>
+        </div>
+        <div class="clear"></div>
+        <div class="list">
+            <p><span class="head4">运动类</span><span class="foot">更多</span> </p>
+            <div  class="list_img">
+                <ul  >
+                    <li><a href=""><img src="./images/round4_1.png" alt=""></a></li>
+                    <li><a href=""><img src="./images/round4_2.png" alt=""></a></li>
+                    <li><a href=""><img src="./images/round4_3.png" alt=""></a></li>
+                    <li><a href=""><img src="./images/round4_3.png" alt=""></a></li>
+                </ul>
+
+            </div>
+        </div>
+
+        <div class="clear" style="margin-bottom: 2rem;"></div>
+        <div class="nav">
+            <a href="./index/index.html"><img src="./images/p6.png" alt=""><p>首页</p></a>
+            <a href="./fenlei.html"><img src="./images/bottom_ano.png" alt=""><p>分类</p></a>
+            <a href="./found.html"><img src="./images/p8.png" alt=""><p>发现</p></a>
+            <a href="./my.html"><img src="./images/tubiao_4.png" alt=""><p>我的</p></a>
+        </div>
+    </body>
+</html>
