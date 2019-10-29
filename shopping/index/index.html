@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<script>
+			(function (doc, win) {
+                    var docEl = doc.documentElement,
+                        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                        recalc = function () {
+                            var clientWidth = docEl.clientWidth;
+                            if (!clientWidth) return;
+                            if(clientWidth>=750){
+                                docEl.style.fontSize = '100px';
+                            }else{
+                                docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+                            }
+                        };
+
+                    if (!doc.addEventListener) return;
+                    win.addEventListener(resizeEvt, recalc, false);
+                    doc.addEventListener('DOMContentLoaded', recalc, false);
+                })(document, window);
+            </script>
+		<title>团购APP</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<link rel="stylesheet" type="text/css" href="../font/iconfont.css"/>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			body {
+				position: relative;
+				width: 100%;
+				max-width: 750px;
+				min-width: 320px;
+				margin: 0 auto;
+			}
+
+			img {
+				max-width: 100%;
+				height: auto;
+			}
+
+			ul li {
+				list-style: none;
+				float: left;
+			}
+
+			.box {
+				width: 7.50rem;
+				margin: 0 auto;
+			}
+
+			.main {
+				padding: 0.2rem;
+			}
+
+			.lo {
+				width: 1.24rem;
+				height: 1.23rem;
+			}
+
+			.top {
+				height: 0.5rem;
+				transform: translateY(-100%);
+				border: 3px solid #ff9344;
+				width: 1.4rem;
+			}
+
+			.fr {
+				float: right;
+			}
+
+			.clearFix:after {
+				content: "";
+				width: 0;
+				height: 0;
+				clear: both;
+			}
+
+			header input.top {
+				width: 1.8rem;
+				padding: 0 0.6rem 0 0.2rem;
+				border-radius: 0.25rem;
+				background: url(images/search.jpg) no-repeat;
+				background-size: 0.36rem;
+				background-position: 2.1rem 50%;
+				margin: 0 0.7rem 0 0.5rem;
+				outline: none;
+				font-size: 0.22rem;
+			}
+			input::-webkit-input-placeholder{text-align: center;}
+			header select {
+				padding-left: 0.2rem;
+				font-size: 0.24rem;
+			}
+
+			div.banner {
+				width: 7.5rem;
+				height: 2.85rem;
+			}
+
+			div.t_top {
+				height: 2.9rem;
+				margin: 0.3rem 0;
+			}
+
+			div.top_1 {
+				height: 0.6rem;
+			}
+
+			.you {
+				width: .56rem;
+				height: .54rem;
+			}
+
+			.love {
+				width: .55rem;
+				height: .48rem;
+			}
+
+			.more {
+				width: .25rem;
+				height: .26rem;
+			}
+
+			.pho {
+				width: 2.1rem;
+				height: 1.63rem;
+			}
+
+			div.top_1>img {
+				transform: translateY(-100%);
+			}
+
+			div.top_1>span {
+				font-size: 0.28rem;
+				transform: translate(0.1rem, -180%);
+				display: inline-block;
+			}
+
+			div.top_1 p {
+				font-size: 0.2rem;
+				width: 0.9rem;
+				height: 0.26rem
+			}
+
+			div.t_main img {
+				margin: 0 0.5rem;
+				width: 2.38rem;
+				height: .93rem;
+			}
+
+			div.txt {
+				width: 4.8rem;
+				height: 1.66rem;
+				font-size: 0.26rem;
+				color: #999;
+				font-size: 0.22rem;
+			}
+
+			div.txt p span {
+				color: #999;
+				font-size: 0.22rem;
+			}
+
+			div.txt p:first-child {
+				color: #333;
+				margin: 0.26rem 0 0.2rem 0;
+				font-size: 0.26rem
+			}
+
+			div.txt p:last-child {
+				color: #ff9344;
+				margin-top: 0.2rem;
+				font-size: 0.26rem
+			}
+
+			footer {
+				font-size: 0.24rem;
+			}
+
+			footer ul li {
+				margin-left: 1.3rem;
+			}
+
+			footer ul li p {
+				width: 0.7rem;
+				text-align: center;
+			}
+
+			footer ul li:first-child {
+				margin-left: 0.3rem;
+			}
+
+			.nav {
+				width: 7.5rem;
+				position: fixed;
+				bottom: 0;
+				background: white;
+			}
+
+			.nav a {
+				width: 25%;
+				height: 1.25rem;
+				font-size: 0.26rem;
+				color: black;
+				float: left;
+				display: block;
+				text-align: center;
+				padding-top: 0.1rem;
+				text-decoration: none;
+			}
+
+			.nav a img {
+				margin: 0 auto;
+				width: 0.74rem;
+				height: 0.7rem;
+			}
+
+			.clear {
+				clear: both;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<header class="main">
+				<img src="images/logo.png" alt="logo" class="lo" />
+				<input type="text" placeholder="请输入商品名称" class="top" />
+				<select class="top">
+					<option>广州市</option>
+					<option>北京市</option>
+					<option>上海市</option>
+					<option>深圳市</option>
+				</select>
+			</header>
+			<div class="banner"><img src="images/banner.png" /></div>
+			<div class="main">
+				<div class="t_top">
+					<div class="top_1">
+						<img src="images/tubiao_5.png" class="you" /><span>优惠团购</span>
+						<p class="fr"><span>更多</span> <img src="images/more.jpg" alt="" class="more"></p>
+					</div>
+					<div class="t_main">
+						<img src="images/main_1.png" />
+						<img src="images/main_2.png" />
+						<img src="images/main_3.png" />
+						<img src="images/main_4.png" />
+					</div>
+				</div>
+				<div class="m_main">
+					<div class="top_1">
+						<img src="images/tubiao_6.gif" class="love" /><span>猜你喜欢</span>
+						<p class="fr"><span>更多</span> <img src="images/more.jpg" alt="" class="more"></p>
+					</div>
+					<div class="m_love">
+						<a href="../detail/detail.html"><img src="images/main_5.png" class="pho" /></a>
+						<div class="txt fr clearFix">
+							<p>万岁寿司 （正佳店）<span class="fr">&lt;100m</span></p>
+							<p>[100店通用] 双人套餐</p>
+							<p>￥ 88.00 <span class="fr">已售1000</span></p>
+						</div>
+						<img src="images/main_6.png" class="pho" />
+						<div class="txt fr clearFix">
+							<p>周黑鸭 （正佳店）<span class="fr">&lt;100m</span></p>
+							<p>[100店通用] 双人套餐</p>
+							<p>￥ 88.00 <span class="fr">已售1000</span></p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="clear" style="margin-bottom: 2rem;"></div>
+		<div class="nav">
+			<a href="index.html">
+			    <span style="font-size: 0.5rem;" class="iconfont icon-1"></span><p>首页</p>
+			</a>
+			<a href="../fenlei.html">
+			    <span style="font-size: 0.5rem;" class="iconfont icon-4"></span><p>分类</p>
+			</a>
+			<a href="../found.html">
+			    <span style="font-size: 0.5rem;" class="iconfont icon-21"></span><p>发现</p>
+			</a>
+			<a href="../my.html">
+			    <span style="font-size: 0.5rem;" class="iconfont icon-7"></span><p>我的</p>
+			</a>
+		</div>
+
+
+	</body>
+</html>
